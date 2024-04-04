@@ -2,7 +2,7 @@ import * as winston from 'winston';
 
 const transports: winston.transport[] = [];
 const consoleTransport = new (winston.transports.Console)({
-  name: 'console-log',
+
   level: 'error',
   timestamp: true,
   colorize: true,
