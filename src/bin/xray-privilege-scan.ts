@@ -53,7 +53,9 @@ logger.info(`================== xray-privilege-scan start (${version}) =========
 
 //sanity check on start time
 const now = Date.now();
-const startTime = program.parse(process.argv).opts().startTime ? parseInt(program.parse(process.argv).opts().startTime) * 1000 : undefined;
+const startTime = program.parse(process.argv);
+const opts = program.opts();
+const startTimeValue = opts.startTime ? parseInt(opts.startTime) * 1000 : undefined;
 if(startTime && (startTime < (now - 30*24*60*60*1000) || startTime > (now + 60*1000))) {
   error("Invalid start time [%s]. Start time can't be older than 30 days or in the future.", program.startTime);
   helpError();
