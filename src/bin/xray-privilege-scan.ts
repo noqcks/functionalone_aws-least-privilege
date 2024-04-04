@@ -61,7 +61,7 @@ if(startTime && (startTime < (now - 30*24*60*60*1000) || startTime > (now + 60*1
 
 const conf: ScanXrayTracesConf = {
   startTime: startTime ? new Date(startTime) : undefined,
-  timeRangeMinutes: program.timeRange,
+  timeRangeMinutes: program.opts().timeRange,
   filterExpression: program.filter,
 };
 
