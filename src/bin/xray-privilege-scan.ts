@@ -19,7 +19,7 @@ function error(msg: string, ...args: any[]) {
  * Print help and exit
  */
 function helpError() {
-  program.outputHelp();
+  program.outputHelp({ error: true });
   process.exit(1);
 }
 
