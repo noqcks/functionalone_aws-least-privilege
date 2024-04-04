@@ -4,7 +4,11 @@ const transports: winston.transport[] = [];
 const consoleTransport = new (winston.transports.Console)({
 // Removed 'name' property as it's not a valid option for ConsoleTransportOptions
   level: 'error',
-  timestamp: true,
+  format: winston.format.combine(
+    winston.format.colorize(),
+    winston.format.timestamp(),
+    winston.format.printf(info => `${info.timestamp} ${info.level}: ${info.message}`)
+  ),
   colorize: true,
   prettyPrint: true,
 });
