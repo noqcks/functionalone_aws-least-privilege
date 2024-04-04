@@ -9,7 +9,7 @@ const consoleTransport = new (winston.transports.Console)({
     winston.format.timestamp(),
     winston.format.printf(info => `${info.timestamp} ${info.level}: ${info.message}`)
   ),
-  colorize: true,
+  // Removed as 'colorize' is not a valid property in ConsoleTransportOptions
   prettyPrint: true,
 });
 transports.push(consoleTransport);
