@@ -1,6 +1,6 @@
 import * as winston from 'winston';
 
-const transports: winston.TransportInstance[] = [];
+const transports: winston.transport[] = [];
 const consoleTransport = new (winston.transports.Console)({
   name: 'console-log',
   level: 'error',
